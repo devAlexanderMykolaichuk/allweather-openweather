@@ -26,7 +26,7 @@ public class OWHttpClient {
         HttpRequest httpRequest = HttpRequest.newBuilder()
                 .uri(uri)
                 .build();
-
+        log.info("GET REQUEST will be sent to uri " + uri.toString());
         try {
             HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
             log.info("Raw resp: " + response.body());
